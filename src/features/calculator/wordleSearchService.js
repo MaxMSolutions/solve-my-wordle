@@ -25,7 +25,6 @@ const findWords = (exactLetters, includeChars, excludeChars, wordLength = 5) => 
         c = c.toUpperCase();
         if (c != '') wordSearchResults = wordSearchResults.filter(a => a.toUpperCase().indexOf(c) == i);
     }
-    console.log(wordSearchResults);
 
     return wordSearchResults;
 };

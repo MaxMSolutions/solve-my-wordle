@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { makeStyles } from '@mui/styles';
 import Grid from '@mui/material/Grid';
-import findWords from '../../calculator/wordleFilter';
+import findWords from '../../calculator/wordleSearchService';
 import { Card, CardContent, Chip, TextField, Typography } from '@mui/material';
 
 const useStyles = makeStyles({
@@ -13,6 +13,9 @@ const useStyles = makeStyles({
         marginRight: '2px !important',
         background: 'linear-gradient(168deg, #282a28 30%, #393e3a 90%)',
         textTransform: 'uppercase',
+        '& > .MuiFilledInput-underline .MuiInputBase-input.mui-focused::after': {
+            borderBottom: '2px solid #487748',
+        },
         '& input': {
             fontSize: 32,
             padding: '5px 0px',
@@ -34,7 +37,7 @@ const useStyles = makeStyles({
     tbYellow: {
         width: '258px !important',
         textTransform: 'uppercase',
-        background: 'linear-gradient(168deg, #b59f3b 30%, #b59f3b 90%)',
+        background: 'linear-gradient(168deg, #1e1b0f 30%, #3a3318 90%)',
         '& input': {
             fontSize: 32,
             padding: '4px 16px',
@@ -45,7 +48,7 @@ const useStyles = makeStyles({
     tbExclude: {
         width: '258px !important',
         textTransform: 'uppercase',
-        background: 'linear-gradient(168deg, #932424 30%, #c34646 90%)',
+        background: 'linear-gradient(168deg, #160707 30%, #4e1717 90%)',
         '& input': {
             fontSize: 32,
             padding: '4px 16px',
@@ -68,6 +71,9 @@ const useStyles = makeStyles({
         marginTop: 32,
         marginBottom: 64,
         margin: 16,
+    },
+    resultTitle: {
+        textAlign: 'center',
     },
     results: {
         display: 'flex',
@@ -124,8 +130,6 @@ const Solver = ({ children }) => {
         setHasSearched(true);
     };
 
-    console.log(result.length, hasSearched);
-
     return (
         <Grid className={styles.root}>
             <Grid className={styles.gridCenter}>
@@ -133,6 +137,7 @@ const Solver = ({ children }) => {
             </Grid>
             <Grid className={styles.gridCenter}>
                 <TextField
+                    variant="filled"
                     inputProps={{ maxLength: 1 }}
                     className={classes[0]}
                     onChangeCapture={val => {
@@ -140,6 +145,7 @@ const Solver = ({ children }) => {
                     }}
                 />
                 <TextField
+                    variant="filled"
                     inputProps={{ maxLength: 1 }}
                     className={classes[1]}
                     onChangeCapture={val => {
@@ -147,6 +153,7 @@ const Solver = ({ children }) => {
                     }}
                 />
                 <TextField
+                    variant="filled"
                     inputProps={{ maxLength: 1 }}
                     className={classes[2]}
                     onChangeCapture={val => {
@@ -154,6 +161,7 @@ const Solver = ({ children }) => {
                     }}
                 />
                 <TextField
+                    variant="filled"
                     inputProps={{ maxLength: 1 }}
                     className={classes[3]}
                     onChangeCapture={val => {
@@ -161,6 +169,7 @@ const Solver = ({ children }) => {
                     }}
                 />
                 <TextField
+                    variant="filled"
                     inputProps={{ maxLength: 1 }}
                     className={classes[4]}
                     onChangeCapture={val => {
@@ -172,18 +181,18 @@ const Solver = ({ children }) => {
                 <Typography className={styles.label}>Known Letters</Typography>
             </Grid>
             <Grid className={styles.gridCenter}>
-                <TextField onChange={onKnownChange} inputProps={{ maxLength: 26 }} className={styles.tbYellow} />
+                <TextField variant="filled" onChange={onKnownChange} inputProps={{ maxLength: 26 }} className={styles.tbYellow} />
             </Grid>
             <Grid className={styles.gridCenter}>
                 <Typography className={styles.label}>Excluded Letters</Typography>
             </Grid>
             <Grid className={styles.gridCenter}>
-                <TextField onChange={onExcludedChange} inputProps={{ maxLength: 26 }} className={styles.tbExclude} />
+                <TextField variant="filled" onChange={onExcludedChange} inputProps={{ maxLength: 26 }} className={styles.tbExclude} />
             </Grid>
 
             <Card elevation={4} className={styles.resultsContainer}>
                 <CardContent>
-                    <Grid>
+                    <Grid className={styles.resultTitle}>
                         {result.length > 0 && hasSearched && (
                             <Typography variant="h5" gutterBottom>
                                 Give these words a try! 😊

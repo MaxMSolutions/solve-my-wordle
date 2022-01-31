@@ -9,6 +9,8 @@ function App() {
     const theme = createTheme({
         palette: {
             mode: 'dark',
+            secondary: { main: '#3aaf43' },
+            primary: { main: '#3aaf43' },
             background: {
                 default: '#111111',
             },

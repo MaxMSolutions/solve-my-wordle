@@ -32,7 +32,9 @@ const PageTitle = ({ children }) => {
             <Grid className={styles.left}>
                 <Typography className={styles.title}>SOLVE.</Typography>
                 <Typography className={styles.title}>MY.</Typography>
-                <Typography className={styles.title}>WORDLE.</Typography>
+                <Typography className={styles.title} style={{ color: '#3aaf43' }}>
+                    WORDLE.
+                </Typography>
             </Grid>
             <Grid
                 className={styles.right}
