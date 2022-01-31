@@ -1,0 +1,60 @@
+{
+    "name": "app",
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+        "react": "^16.14.0",
+        "react-dom": "^16.13.1",
+        "react-promise-tracker": "^2.1.0",
+        "react-router-dom": "^5.2.0",
+        "react-scripts": "^3.4.4",
+        "serviceworker-webpack-plugin": "^1.0.1",
+        "webpack-manifest-plugin": "^3.0.0"
+    },
+    "scripts": {
+        "start": "webpack-dev-server --open --mode development --history-api-fallback",
+        "build": "webpack --mode production --history-api-fallback",
+        "lint": "eslint ./src",
+        "fix": "eslint ./src --fix",
+        "format": "prettier --write \"src/**/**.js"
+    },
+    "eslintConfig": {
+        "extends": "react-app"
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    },
+    "devDependencies": {
+        "@babel/core": "^7.10.1",
+        "@babel/plugin-proposal-class-properties": "^7.10.4",
+        "@babel/plugin-transform-runtime": "^7.12.1",
+        "@babel/preset-env": "^7.10.1",
+        "@babel/preset-react": "^7.10.1",
+        "babel-eslint": "^10.1.0",
+        "babel-loader": "^8.0.6",
+        "babel-preset-react": "^6.24.1",
+        "css-loader": "^3.5.3",
+        "eslint": "^7.1.0",
+        "eslint-config-react": "^1.1.7",
+        "eslint-loader": "^4.0.2",
+        "eslint-plugin-react": "^7.20.0",
+        "file-loader": "^6.0.0",
+        "html-webpack-plugin": "^4.3.0",
+        "json-loader": "^0.5.7",
+        "prettier": "^2.0.5",
+        "webpack": "^4.44.2",
+        "webpack-cli": "^3.3.11",
+        "webpack-dev-server": "^3.11.0",
+        "webpack-filter-warnings-plugin": "^1.2.1",
+        "webpack-pwa-manifest": "^4.3.0"
+    }
+}
