@@ -4,10 +4,7 @@ import Grid from '@mui/material/Grid';
 import PropTypes from 'prop-types';
 
 const useStyles = makeStyles({
-    root: {
-        background: 'linear-gradient(45deg, #282a28 30%, #393e3a 90%)',
-        height: '100vh',
-    },
+    root: {},
 });
 
 const PagePanel = ({ children }) => {

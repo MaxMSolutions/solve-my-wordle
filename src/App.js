@@ -1,19 +1,17 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import HomePage from '../src/features/home/HomePage';
-import findWords from './features/calculator/wordlefilter';
 import typography from './theme/typography';
 require('./assets/images/favicon.ico');
 
 function App() {
-    useEffect(() => {
-        findWords();
-    }, []);
-
     const theme = createTheme({
         palette: {
             mode: 'dark',
+            background: {
+                default: '#111111',
+            },
         },
         components: {
             MuiTypography: {

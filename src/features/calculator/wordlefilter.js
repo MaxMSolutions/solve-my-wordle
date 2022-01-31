@@ -1,14 +1,9 @@
 import wordDb from './wordDatabase';
 
-const findWords = () => {
-    var wordLength = 5;
-    var excludeChars = 'sae';
-    var includeChars = 'ilt';
-    var exactLetters = ['', '', '', '', 'T'];
-
+const findWords = (exactLetters, includeChars, excludeChars, wordLength = 5) => {
     // GETTING INITIAL WORD LIST
     var wordSearchResults = [...new Set(wordDb)];
-    var wordSearchResults = wordSearchResults.filter(w => w.length == wordLength);
+    var wordSearchResults = wordSearchResults.filter(w => w.length == wordLength && w.indexOf('-') == -1 && w.indexOf(' ') == -1);
 
     // EXCLUDE CHARS
     excludeChars = excludeChars.toUpperCase();
