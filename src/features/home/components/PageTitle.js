@@ -21,11 +21,15 @@ const useStyles = makeStyles({
         textTransform: 'uppercase',
         fontWeight: '700 !important',
     },
-    left: {},
-    right: {},
+    left: {
+        marginBottom: 8,
+    },
+    right: {
+        marginBottom: 16,
+    },
 });
 
-const PageTitle = ({ children }) => {
+const PageTitle = () => {
     const styles = useStyles();
     return (
         <Grid className={styles.root}>
@@ -36,17 +40,7 @@ const PageTitle = ({ children }) => {
                     WORDLE.
                 </Typography>
             </Grid>
-            <Grid
-                className={styles.right}
-                xs={{
-                    marginTop: {
-                        xs: 8,
-                        s: 8,
-                        md: 0,
-                        lg: 0,
-                    },
-                }}
-            >
+            <Grid className={styles.right}>
                 <Typography variant="body1" className={styles.tagline}>
                     Let's get that wordle solved.
                 </Typography>

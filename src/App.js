@@ -15,12 +15,8 @@ function App() {
                 default: '#111111',
             },
         },
-        components: {
-            MuiTypography: {
-                styleOverrides: {
-                    ...typography,
-                },
-            },
+        typography: {
+            ...typography,
         },
     });
 

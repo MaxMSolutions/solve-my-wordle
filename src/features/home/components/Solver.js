@@ -11,7 +11,7 @@ const useStyles = makeStyles({
     tbSm: {
         maxWidth: 50,
         marginRight: '2px !important',
-        background: 'linear-gradient(168deg, #282a28 30%, #393e3a 90%)',
+        background: 'linear-gradient(168deg, #050605 30%, #111611 90%)',
         textTransform: 'uppercase',
         '& > .MuiFilledInput-underline .MuiInputBase-input.mui-focused::after': {
             borderBottom: '2px solid #487748',
@@ -66,6 +66,8 @@ const useStyles = makeStyles({
         fontSize: 18,
         fontWeight: 700,
         textTransform: 'uppercase',
+        width: 258,
+        textAlign: 'left',
     },
     resultsContainer: {
         marginTop: 32,
@@ -133,7 +135,9 @@ const Solver = ({ children }) => {
     return (
         <Grid className={styles.root}>
             <Grid className={styles.gridCenter}>
-                <Typography className={styles.label}>Exact Letters</Typography>
+                <Typography variant="h4" className={styles.label}>
+                    <span style={{ color: '#459145' }}>Exact</span> Letters
+                </Typography>
             </Grid>
             <Grid className={styles.gridCenter}>
                 <TextField
@@ -178,13 +182,17 @@ const Solver = ({ children }) => {
                 />
             </Grid>
             <Grid className={styles.gridCenter}>
-                <Typography className={styles.label}>Known Letters</Typography>
+                <Typography variant="h4" className={styles.label}>
+                    <span style={{ color: '#8f782a' }}>Known</span> Letters
+                </Typography>
             </Grid>
             <Grid className={styles.gridCenter}>
                 <TextField variant="filled" onChange={onKnownChange} inputProps={{ maxLength: 26 }} className={styles.tbYellow} />
             </Grid>
             <Grid className={styles.gridCenter}>
-                <Typography className={styles.label}>Excluded Letters</Typography>
+                <Typography variant="h4" className={styles.label}>
+                    <span style={{ color: '#993232' }}>Excluded</span> Letters
+                </Typography>
             </Grid>
             <Grid className={styles.gridCenter}>
                 <TextField variant="filled" onChange={onExcludedChange} inputProps={{ maxLength: 26 }} className={styles.tbExclude} />

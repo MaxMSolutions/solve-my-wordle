@@ -6,11 +6,13 @@ import PageFooter from './components/PageFooter';
 
 const HomePage = () => {
     return (
-        <PagePanel>
-            <PageTitle />
-            <Solver />
+        <>
+            <PagePanel>
+                <PageTitle />
+                <Solver />
+            </PagePanel>
             <PageFooter />
-        </PagePanel>
+        </>
     );
 };
 
