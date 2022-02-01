@@ -37,7 +37,7 @@ const useStyles = makeStyles({
     tbYellow: {
         width: '258px !important',
         textTransform: 'uppercase',
-        background: 'linear-gradient(168deg, #1e1b0f 30%, #3a3318 90%)',
+        background: 'linear-gradient(168deg, #000000 30%, #3a3318 90%)',
         '& input': {
             fontSize: 32,
             padding: '4px 16px',
@@ -48,7 +48,7 @@ const useStyles = makeStyles({
     tbExclude: {
         width: '258px !important',
         textTransform: 'uppercase',
-        background: 'linear-gradient(168deg, #160707 30%, #4e1717 90%)',
+        background: 'linear-gradient(168deg, #000000 30%, #4e1717 90%)',
         '& input': {
             fontSize: 32,
             padding: '4px 16px',
@@ -136,7 +136,7 @@ const Solver = ({ children }) => {
         <Grid className={styles.root}>
             <Grid className={styles.gridCenter}>
                 <Typography variant="h4" className={styles.label}>
-                    <span style={{ color: '#459145' }}>Exact</span> Letters
+                    <span style={{ color: '#3aaf43' }}>Exact</span> Letters
                 </Typography>
             </Grid>
             <Grid className={styles.gridCenter}>
@@ -183,7 +183,7 @@ const Solver = ({ children }) => {
             </Grid>
             <Grid className={styles.gridCenter}>
                 <Typography variant="h4" className={styles.label}>
-                    <span style={{ color: '#8f782a' }}>Known</span> Letters
+                    <span style={{ color: '#d5b032' }}>Known</span> Letters
                 </Typography>
             </Grid>
             <Grid className={styles.gridCenter}>
@@ -191,7 +191,7 @@ const Solver = ({ children }) => {
             </Grid>
             <Grid className={styles.gridCenter}>
                 <Typography variant="h4" className={styles.label}>
-                    <span style={{ color: '#993232' }}>Excluded</span> Letters
+                    <span style={{ color: '#e63e3e' }}>Excluded</span> Letters
                 </Typography>
             </Grid>
             <Grid className={styles.gridCenter}>
