@@ -12,6 +12,7 @@ const useStyles = makeStyles({
         textAlign: 'center',
     },
     logo: {
+        display: 'inline-block',
         marginLeft: -4,
     },
     company: {
@@ -19,6 +20,21 @@ const useStyles = makeStyles({
     },
     subtitle: {
         color: '#727272',
+    },
+    morrow: {
+        fontSize: 20,
+        letterSpacing: 8,
+        fontWeight: 700,
+    },
+    solutions: {
+        fontWeight: 700,
+        letterSpacing: 5,
+    },
+    link: {
+        fontSize: 11,
+        fontWeight: 700,
+        letterSpacing: 2,
+        color: '#FFF',
     },
 });
 
@@ -44,13 +60,19 @@ const PageFooter = () => {
             </Grid>
 
             <Grid>
-                <img className={styles.logo} width={174} src={logo} alt="Morrow Solutions Logo" />
+                <a className={styles.logo} href="https://morrowsolutions.dev">
+                    <img width={174} src={logo} alt="Morrow Solutions Logo" />
+                </a>
             </Grid>
             <Grid className={styles.company}>
                 <Typography>
-                    <span style={{ fontSize: 20, letterSpacing: 8, fontWeight: 700 }}>MORROW</span>
+                    <span className={styles.morrow}>MORROW</span>
                     <br />
-                    <span style={{ letterSpacing: 2, fontWeight: 700, letterSpacing: 5 }}>SOLUTIONS</span>
+                    <span className={styles.solutions}>SOLUTIONS</span>
+                    <br />
+                    <a className={styles.link} href="https://morrowsolutions.dev">
+                        https://morrowsolutions.dev
+                    </a>
                 </Typography>
             </Grid>
         </Grid>
